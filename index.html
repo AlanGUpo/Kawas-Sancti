@@ -28,7 +28,7 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* TITRES (inchangés) */
+/* TITRES */
 h2 {
   font-size: 28px;
   font-weight: 700;
@@ -38,46 +38,52 @@ h2 {
   margin: 32px 0 22px;
 }
 
-/* TEXTE AGRANDI */
+/* TEXTE */
 p {
   font-size: 19px;
   margin: 18px 0;
   text-align: justify;
 }
 
-/* IMAGES */
+/* IMAGES PAR DÉFAUT */
 img {
   display: block;
   max-width: 85%;
   height: auto;
-  margin: 28px auto;
+  margin: 30px auto;
 }
 
-/* Image pleine largeur */
+/* IMAGES PLEINE LARGEUR */
 .full-width {
   max-width: 100%;
   margin-left: -40px;
   margin-right: -40px;
 }
 
-/* Director layout */
+/* COVER : plus large mais propre */
+.cover {
+  max-width: 95%;
+}
+
+/* DIRECTOR LAYOUT */
 .director-flex {
   display: flex;
   flex-wrap: wrap;
   gap: 28px;
   margin-top: 30px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .director-flex img {
-  width: 40%;
+  width: 42%;
+  object-fit: cover;
 }
 
 .director-text {
   width: 55%;
 }
 
-/* Contact */
+/* CONTACT */
 .contact {
   text-align: center;
   font-size: 20px;
@@ -87,13 +93,13 @@ img {
 .contact a {
   color: #333;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .contact a:hover {
   text-decoration: underline;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
   .pdf-page {
     padding: 20px;
@@ -116,7 +122,7 @@ img {
 
 <!-- PAGE 1 : COVER -->
 <div class="pdf-page">
-  <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Cover image">
+  <img class="cover" src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Cover image">
 
   <h2 style="font-size:22px; letter-spacing:6px;">
     R I O&nbsp;&nbsp;V E R D E&nbsp;&nbsp;P R O D U C T I O N&nbsp;&nbsp;2 0 2 5
@@ -127,7 +133,6 @@ img {
 <div class="pdf-page">
   <h2 style="font-size:30px;">S Y N O P S I S</h2>
 
-  <!-- Image pleine largeur -->
   <img class="full-width" src="images/Kawas Sancti eng.pdf-image-001.jpg" alt="Synopsis image">
 
   <p>Deep in the lush rice fields of Hualien County, Taiwan, the Pangcah (Amis) Indigenous community lives at the intersection of two spiritual worlds:</p>
@@ -140,13 +145,11 @@ img {
 <div class="pdf-page">
   <h2>DIRECTOR’S STATEMENT</h2>
 
-  <!-- Paragraphe plus dense avant l’image -->
   <p>
     The film invites audiences to delve into the complex and multi-layered spiritual world of the Indigenous community. By observing everyday rituals, silences, gestures, and songs, the camera follows the internal rhythm of the people it encounters rather than imposing an external narrative structure.
   </p>
 
-  <!-- Image légèrement plus centrée visuellement -->
-  <img style="max-width:75%;" src="images/Kawas Sancti eng.pdf-image-002.jpg" alt="Director statement image">
+  <img class="full-width" src="images/Kawas Sancti eng.pdf-image-002.jpg" alt="Director statement image">
 
   <p>
     As a shaman of the Sikawasay hierarchy, Marang’s life journey guides us into a world where shamanic rituals honor ancestral spirits, heal ailments, and sustain a profound connection with the sacred.
@@ -161,7 +164,6 @@ img {
 <div class="pdf-page">
   <h2>D I R E C T O R</h2>
 
-  <!-- Image 004 à gauche + texte à droite -->
   <div class="director-flex">
     <img src="images/Kawas Sancti eng.pdf-image-004.jpg" alt="Director portrait">
 
@@ -172,8 +174,7 @@ img {
     </div>
   </div>
 
-  <!-- Image 003 pleine largeur en bas -->
-  <img src="images/Kawas Sancti eng.pdf-image-003.jpg" alt="Final image">
+  <img class="full-width" src="images/Kawas Sancti eng.pdf-image-003.jpg" alt="Final image">
 
   <div class="contact">
     📞 +33&nbsp;6&nbsp;84&nbsp;08&nbsp;40&nbsp;13
