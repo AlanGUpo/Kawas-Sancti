@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kawas Sancti | Film</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawas Sancti | Film</title>
+<style>
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,14 +16,14 @@ body {
   line-height: 1.8;
   color: #fff;
   background-color: #000;
-  padding: 0;
-  transition: background-color 0.8s, color 0.8s; /* pour le changement de lumière */
+  transition: background-color 0.8s, color 0.8s;
+  text-align: center;
 }
 
 .pdf-page {
   max-width: 900px;
   margin: 0 auto 40px;
-  padding: 20px 40px;
+  padding: 20px 0;
   width: 100%;
 }
 
@@ -33,23 +33,24 @@ body {
   margin: 24px 0 12px;
   color: inherit;
   font-style: italic;
-  text-align: center;
   transition: color 0.8s;
 }
 
 .page-content p {
-  margin: 16px 0;
+  margin: 16px auto;
   text-align: justify;
+  max-width: 850px;
   font-size: 1.1em;
   color: inherit;
   transition: color 0.8s;
 }
 
-.page-content img {
-  max-width: 100%;
+.page-content img, .page-content video {
+  width: 100%;
   height: auto;
   display: block;
   margin: 20px auto;
+  transition: all 0.8s;
 }
 
 .contact a {
@@ -58,52 +59,29 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
-  .page-content h2 {
-    font-size: 22px;
-  }
-  .page-content p {
-    font-size: 1em;
-  }
-  .cover-title {
-    display: block;
-    line-height: 1.2;
-  }
-  .cover-title span {
-    display: block;
-  }
-}
-
-/* Classes pour le dynamisme */
-.text-section {
-  background-color: #000;
-  color: #fff;
-  transition: background-color 0.8s, color 0.8s;
-}
-
-.image-section {
-  background-color: #fff;
-  color: #000;
-  transition: background-color 0.8s, color 0.8s;
+  .page-content h2 { font-size: 22px; }
+  .page-content p { font-size: 1em; }
+  .cover-title { line-height: 1.2; }
+  .cover-title span { display: block; }
 }
 </style>
 </head>
 <body>
 
 <!-- PAGE 1 : Affiche -->
-<div class="pdf-page image-section" data-page="1">
+<div class="pdf-page" data-page="1">
   <div class="page-content">
     <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Affiche Kawas Sancti">
-    <h2 class="cover-title"><span>RIO VERDE</span><span>PRODUCTION</span><span>2025</span></h2>
+    <h2 class="cover-title"><span>TRAILER</span></h2>
   </div>
 </div>
 
 <!-- PAGE 2 : Synopsis -->
-<div class="pdf-page text-section" data-page="2">
+<div class="pdf-page" data-page="2">
   <div class="page-content">
     <h2>SYNOPSIS</h2>
-    <img src="images/Kawas Sancti eng.pdf-image-001.jpg" alt="Synopsis Image" class="image-section">
+    <img src="images/Kawas Sancti eng.pdf-image-001.jpg" alt="Synopsis Image">
     <p>Deep in the lush rice fields of Hualien County, Taiwan, the Pangcah (Amis) Indigenous community lives at the intersection of two spiritual worlds:</p>
     <p>On one hand, the ancestral traditions passed down through generations of shamans;</p>
     <p>On the other hand, the Christian faith introduced by missionaries.</p>
@@ -112,45 +90,54 @@ body {
   </div>
 </div>
 
-<!-- PAGE 3 : Director’s Statement -->
-<div class="pdf-page text-section" data-page="3">
+<!-- PAGE 3 : Director's Statement -->
+<div class="pdf-page" data-page="3">
   <div class="page-content">
     <h2>DIRECTOR’S STATEMENT</h2>
     <p>The film invites audiences to delve into the complex and multi-layered spiritual world of the Indigenous community. By portraying the coexistence of shamanic rituals and Christian ceremonies, it reveals a culture that continuously adapts and evolves amid social and historical transformations.</p>
-    <img src="images/Kawas Sancti eng.pdf-image-002.jpg" alt="Director Image" class="image-section">
+    <img src="images/Kawas Sancti eng.pdf-image-002.jpg" alt="Director Image">
     <p>As a shaman of the Sikawasay hierarchy, Marang’s life journey guides us into a world where shamanic rituals honor ancestral spirits, heal ailments, and sustain an intimate and profound connection with the sacred. The film also explores how Christianity, introduced by missionaries in the 1950s, gradually integrated into local traditions.</p>
     <p>The creative intention of this work is to offer an experience of “listening” rather than a didactic exposition: following the rhythm of the subjects’ own time, attuning to their songs, their uncertainties, and the subtleties of their gestures.</p>
   </div>
 </div>
 
-<!-- PAGE 4 : Director -->
-<div class="pdf-page text-section" data-page="4">
+<!-- PAGE 4 : Video -->
+<div class="pdf-page" data-page="4">
+  <div class="page-content">
+    <h2>WATCH TRAILER</h2>
+    <video controls>
+      <source src="video/trailer.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<!-- PAGE 5 : Director -->
+<div class="pdf-page" data-page="5">
   <div class="page-content">
     <h2>DIRECTOR</h2>
-    <img src="images/Kawas Sancti eng.pdf-image-003.jpg" alt="Director Left Image" style="float:left; width:48%; margin-right:4%;" class="image-section">
-    <p>Researcher and filmmaker Gauthier Le Pévédic is dedicated to creating documentaries that explore religious rituals around the world. In 2023, he completed Rio Verde in the Shipibo community of the Peruvian Amazon. In 2024, he collaborated with the Pangcah community in Tafalong, Taiwan, to complete Kawas Sancti.</p>
-    <img src="images/Kawas Sancti eng.pdf-image-004.jpg" alt="Director Bottom Image" style="display:block; margin:40px auto; width:90%;" class="image-section">
+    <img src="images/Kawas Sancti eng.pdf-image-003.jpg" alt="Director Left Image" style="float:left; width:48%; margin-right:4%;">
+    <p style="max-width:48%; display:inline-block; vertical-align:top;">Researcher and filmmaker Gauthier Le Pévédic is dedicated to creating documentaries that explore religious rituals around the world. In 2023, he completed Rio Verde in the Shipibo community of the Peruvian Amazon. In 2024, he collaborated with the Pangcah community in Tafalong, Taiwan, to complete Kawas Sancti.</p>
+    <img src="images/Kawas Sancti eng.pdf-image-004.jpg" alt="Director Bottom Image" style="display:block; margin:40px auto; width:90%;">
     <h2 class="contact">+33 6 84 08 40 13</h2>
     <h2 class="contact"><a href="mailto:rioverdeproduction@gmail.com">rioverdeproduction@gmail.com</a></h2>
   </div>
 </div>
 
 <script>
-// Changement de lumière au scroll
+// Dynamisme de lumière au scroll pour chaque image
 const pages = document.querySelectorAll('.pdf-page');
 
 window.addEventListener('scroll', () => {
   pages.forEach(page => {
     const rect = page.getBoundingClientRect();
-    if (rect.top < window.innerHeight/2 && rect.bottom > window.innerHeight/2) {
-      // Si la page est centrée, applique son style
-      if (page.classList.contains('image-section')) {
-        document.body.style.backgroundColor = '#fff';
-        document.body.style.color = '#000';
-      } else {
-        document.body.style.backgroundColor = '#000';
-        document.body.style.color = '#fff';
-      }
+    const hasImage = page.querySelector('img, video');
+    if (hasImage && rect.top < window.innerHeight/2 && rect.bottom > window.innerHeight/2) {
+      document.body.style.backgroundColor = '#fff';
+      document.body.style.color = '#000';
+    } else if (!hasImage) {
+      document.body.style.backgroundColor = '#000';
+      document.body.style.color = '#fff';
     }
   });
 });
