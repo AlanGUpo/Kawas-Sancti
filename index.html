@@ -18,11 +18,11 @@ body {
   font-size: 22px;
   background-color: #000;
   color: #fff;
+  text-align: center;
 }
 
 /* TITRES */
 h2 {
-  text-align: center;
   font-style: italic;
   letter-spacing: 0.2em;
   margin-bottom: 40px;
@@ -45,23 +45,32 @@ section {
   max-width: 900px;
   margin: auto;
   overflow-wrap: break-word;
+  text-align: justify;
 }
 .text p {
   margin-bottom: 22px;
-  text-align: justify;
   color: #fff;
 }
 
-/* IMAGES */
+/* IMAGES / VIDEO TOUCHANT LES DEUX BORDS */
 .cover-img, .full-img {
-  width: 100vw; /* touche les deux bords */
+  width: 100%;
   height: auto;
-  margin: 0;
   display: block;
   object-fit: cover;
+  margin: 0 auto;
+}
+.video iframe {
+  width: 100%;
+  height: 56.25vw; /* ratio 16:9 */
+  max-width: 1200px;
+  max-height: 675px;
+  border: none;
+  display: block;
+  margin: 0 auto;
 }
 
-/* COVER */
+/* CREDIT / TITRE COUVERTURE */
 .cover .credit {
   text-align: center;
   padding: 25px 0;
@@ -71,26 +80,12 @@ section {
   color: #fff;
 }
 
-/* VIDEO */
-.video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60vh;
-}
-.video iframe {
-  width: 100vw;
-  height: 56.25vw; /* ratio 16:9 */
-  border: none;
-  max-width: 1200px;
-  max-height: 675px;
-}
-
-/* DIRECTOR */
+/* DIRECTOR SPLIT */
 .split {
   display: flex;
   gap: 60px;
   align-items: center;
+  justify-content: center;
 }
 .split img {
   width: 45%;
@@ -98,7 +93,6 @@ section {
 
 /* CONTACT */
 .contact {
-  text-align: center;
   margin-top: 50px;
   font-size: 22px;
 }
@@ -114,7 +108,6 @@ section {
   body { font-size: 20px; }
   .split { flex-direction: column; }
   .split img { width: 100%; margin-bottom: 20px; }
-  .video iframe { width: 100%; height: 56vw; }
   section { padding: 50px 5vw; }
   .full-img { width: 100%; }
 }
@@ -123,9 +116,8 @@ section {
   body { font-size: 18px; }
   h2 { font-size: 22px; }
   section { padding: 40px 4vw; }
-  .cover .credit { font-size: 22px; letter-spacing: 0.2em; line-height: 1.2; }
+  .cover .credit { font-size: 22px; letter-spacing: 0.25em; line-height: 1.2; }
 
-  /* MOBILE DISPLAY */
   .desktop-only { display: none; }
   .mobile-only { display: block; text-align: center; }
 }
@@ -142,7 +134,9 @@ section {
     <span class="desktop-only">R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N &nbsp; 2 0 2 5</span>
     <!-- Mobile -->
     <span class="mobile-only">
-      R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N<br>2 0 2 5
+      R I O &nbsp; V E R D E<br>
+      P R O D U C T I O N<br>
+      2 0 2 5
     </span>
   </div>
 </section>
