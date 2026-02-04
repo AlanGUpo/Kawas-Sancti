@@ -15,106 +15,124 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.7;
-  color: #222;
-  background-color: #f5f5f5;
-  font-size: 18px;
-}
-
-/* STRUCTURE PAGE */
-.pdf-page {
-  background: white;
-  max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 50px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 19px;
+  transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 /* TITRES */
-.title {
+h2 {
   text-align: center;
-  font-weight: 700;
   font-style: italic;
-  margin-bottom: 30px;
-  font-size: 26px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
+  margin-bottom: 50px;
+  font-size: 28px;
 }
 
-/* IMAGES */
-.edge-image {
+/* SECTIONS */
+section {
   width: 100%;
-  margin: 30px 0;
-  display: block;
+  transition: background-color 0.8s ease, color 0.8s ease;
+  padding: 80px 6vw;
 }
 
-.cover-image {
-  width: 100%;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* PAGE VIDEO */
-.video-page {
-  width: 100%;
-  min-height: 100vh;
+/* FOND DYNAMIQUE */
+.dark {
   background: #000;
+  color: #fff;
+}
+.light {
+  background: #fff;
+  color: #111;
+}
+
+/* Texte et liens */
+.light p, .light a {
+  color: #111;
+}
+.light h2 {
+  color: #000;
+}
+.dark a {
+  color: #fff;
+}
+
+/* COVER */
+.cover img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.cover .credit {
+  text-align: center;
+  padding: 25px;
+  background: rgba(0,0,0,0.6);
+  letter-spacing: 0.35em;
+  font-weight: 600;
+}
+
+/* VIDEO */
+.video {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  align-items: center;
+  min-height: 100vh;
 }
-
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  padding-bottom: 56.25%;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.video iframe {
+  width: 90vw;
+  height: 50vw;
+  max-width: 1200px;
+  max-height: 675px;
   border: none;
 }
 
-/* TEXTE */
-p {
-  margin-bottom: 18px;
+/* IMAGES */
+.full-img {
+  width: 100%;
+  margin: 50px 0;
+}
+
+/* TEXTES */
+.text {
+  max-width: 900px;
+  margin: auto;
+}
+.text p {
+  margin-bottom: 22px;
   text-align: justify;
 }
 
-/* DERNIÈRE PAGE */
-.last-page {
+/* DIRECTOR */
+.split {
   display: flex;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
 }
-
-.last-page img {
+.split img {
   width: 45%;
 }
 
+/* CONTACT */
 .contact {
-  margin-top: 30px;
   text-align: center;
+  margin-top: 50px;
   font-size: 20px;
 }
-
 .contact a {
-  color: #000;
+  color: inherit;
   text-decoration: none;
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .pdf-page {
-    padding: 30px;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .video iframe {
+    width: 100%;
+    height: 56vw;
   }
-  .last-page {
+  .split {
     flex-direction: column;
   }
-  .last-page img {
+  .split img {
     width: 100%;
   }
 }
@@ -123,70 +141,62 @@ p {
 
 <body>
 
-<!-- PAGE 1 : COUVERTURE -->
-<div class="pdf-page">
-  <img class="cover-image" src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Kawas Sancti cover">
-  <p style="text-align:center; font-weight:600; letter-spacing:0.25em;">
-    R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N &nbsp; 2 0 2 5
-  </p>
-</div>
+<!-- PAGE 1 : COVER -->
+<section class="cover dark">
+  <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Kawas Sancti cover">
+  <div class="credit">R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N &nbsp; 2 0 2 5</div>
+</section>
 
-<!-- PAGE 2 : VIDEO DÉDIÉE -->
-<section class="video-page">
-  <div class="video-wrapper">
-    <iframe
-      src="https://www.youtube.com/embed/x09F2qtMAxc"
-      title="Kawas Sancti – Trailer"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+<!-- PAGE 2 : TRAILER -->
+<section class="video dark">
+  <iframe 
+    src="https://www.youtube.com/embed/x09F2qtMAxc" 
+    title="Kawas Sancti Trailer" 
+    allowfullscreen>
+  </iframe>
 </section>
 
 <!-- PAGE 3 : SYNOPSIS -->
-<div class="pdf-page">
-  <h2 class="title">S Y N O P S I S</h2>
-
-  <img class="edge-image" src="images/Kawas Sancti eng.pdf-image-001.jpg" alt="Synopsis image">
-
-  <p>Deep in the lush rice fields of Hualien County, Taiwan, the Pangcah (Amis) Indigenous community lives at the intersection of two spiritual worlds.</p>
-  <p>On one hand, the ancestral traditions passed down through generations of shamans; on the other hand, the Christian faith introduced by missionaries.</p>
-  <p>This 52-minute documentary follows the young shaman Marang Panay while also meeting Father Joseph, a Catholic missionary working within the same community.</p>
-  <p>Through these two life paths, the film explores the coexistence of these spiritual worlds and their profound similarities.</p>
-</div>
+<section class="light">
+  <h2>S Y N O P S I S</h2>
+  <img class="full-img" src="images/Kawas Sancti eng.pdf-image-001.jpg" alt="Synopsis image">
+  <div class="text">
+    <p>Deep in the lush rice fields of Hualien County, Taiwan, the Pangcah (Amis) Indigenous community lives at the intersection of two spiritual worlds.</p>
+    <p>This 52-minute documentary follows the young shaman Marang Panay and Father Joseph, a Catholic missionary working in the same community.</p>
+    <p>The film explores the coexistence of shamanic traditions and Christian faith.</p>
+  </div>
+</section>
 
 <!-- PAGE 4 : DIRECTOR STATEMENT -->
-<div class="pdf-page">
-  <h2 class="title">D I R E C T O R ’ S &nbsp; S T A T E M E N T</h2>
+<section class="light">
+  <h2>D I R E C T O R ’ S &nbsp; S T A T E M E N T</h2>
+  <div class="text">
+    <p>The film invites audiences to enter the layered spiritual world of the Pangcah community.</p>
+    <p>It offers an experience of listening rather than explanation, following the rhythm of the subjects’ own time.</p>
+  </div>
+  <img class="full-img" src="images/Kawas Sancti eng.pdf-image-002.jpg" alt="Director statement image">
+</section>
 
-  <p>The film invites audiences to delve into the layered spiritual world of the Indigenous community.</p>
-  <p>By portraying the coexistence of shamanic rituals and Christian ceremonies, it reveals a culture in constant transformation.</p>
+<!-- PAGE 5 : DIRECTOR + CONTACT -->
+<section class="light">
+  <h2>D I R E C T O R</h2>
 
-  <img class="edge-image" src="images/Kawas Sancti eng.pdf-image-002.jpg" alt="Director statement image">
-
-  <p>The intention is to offer an experience of listening rather than explanation, following the rhythm of the subjects’ own time.</p>
-</div>
-
-<!-- PAGE 5 : DIRECTOR & CONTACT -->
-<div class="pdf-page">
-  <h2 class="title">D I R E C T O R</h2>
-
-  <div class="last-page">
+  <div class="split">
     <img src="images/Kawas Sancti eng.pdf-image-004.jpg" alt="Director portrait">
-    <div>
-      <p>Researcher and filmmaker Gauthier Le Pévédic creates documentaries exploring religious rituals worldwide.</p>
+    <div class="text">
+      <p>Researcher and filmmaker Gauthier Le Pévédic explores religious rituals worldwide.</p>
       <p>In 2023, he completed Rio Verde in the Shipibo community of the Peruvian Amazon.</p>
-      <p>In 2024, he collaborated with the Pangcah community in Tafalong, Taiwan, to complete Kawas Sancti.</p>
+      <p>In 2024, he collaborated with the Pangcah community in Taiwan to complete Kawas Sancti.</p>
     </div>
   </div>
 
-  <img class="edge-image" src="images/Kawas Sancti eng.pdf-image-003.jpg" alt="Final image">
+  <img class="full-img" src="images/Kawas Sancti eng.pdf-image-003.jpg" alt="Final image">
 
   <div class="contact">
     📞 +33 6 84 08 40 13<br><br>
     ✉️ <a href="mailto:rioverdeproduction@gmail.com">rioverdeproduction@gmail.com</a>
   </div>
-</div>
+</section>
 
 </body>
 </html>
