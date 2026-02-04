@@ -59,15 +59,17 @@ section {
 /* COVER */
 .cover img {
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain; /* plus rogné */
+  margin-bottom: 20px;
 }
 .cover .credit {
   text-align: center;
-  padding: 25px;
-  background: rgba(0,0,0,0.6);
+  padding: 25px 0;
   letter-spacing: 0.35em;
   font-weight: 600;
+  font-size: 24px;
+  color: #fff;
 }
 
 /* VIDEO */
@@ -145,6 +147,11 @@ section {
 <section class="cover dark">
   <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Kawas Sancti cover">
   <div class="credit">R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N &nbsp; 2 0 2 5</div>
+  <div class="text">
+    <p>Bienvenue dans le monde de Kawas Sancti, un documentaire anthropologique tourné à Taïwan sur les rituels chamaniques et chrétiens des communautés autochtones.</p>
+    <p>Ce projet allie recherche sur les pratiques religieuses et véritable expérience cinématographique.</p>
+    <p>Le film suit Marang Panay, jeune chaman, et le Père Joseph, missionnaire catholique, pour explorer la coexistence de ces deux univers spirituels.</p>
+  </div>
 </section>
 
 <!-- PAGE 2 : TRAILER -->
