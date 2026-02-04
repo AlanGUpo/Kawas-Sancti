@@ -15,9 +15,9 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.8;
-  font-size: 22px; /* texte globalement lisible */
-  background-color: #000; /* fond noir */
-  color: #fff; /* texte blanc */
+  font-size: 22px;
+  background-color: #000;
+  color: #fff;
 }
 
 /* TITRES */
@@ -32,7 +32,7 @@ h2 {
 
 /* DISPLAY POUR MOBILE/DESKTOP */
 .desktop-only { display: inline; }
-.mobile-only { display: none; }
+.mobile-only { display: none; text-align: center; }
 
 /* SECTIONS */
 section {
@@ -52,14 +52,16 @@ section {
   color: #fff;
 }
 
-/* COVER */
-.cover img {
-  width: 100%;
+/* IMAGES */
+.cover-img, .full-img {
+  width: 100vw; /* touche les deux bords */
   height: auto;
-  object-fit: cover;
+  margin: 0;
   display: block;
-  margin: 0 auto;
+  object-fit: cover;
 }
+
+/* COVER */
 .cover .credit {
   text-align: center;
   padding: 25px 0;
@@ -82,14 +84,6 @@ section {
   border: none;
   max-width: 1200px;
   max-height: 675px;
-}
-
-/* IMAGES */
-.full-img {
-  width: 100vw; /* touche les bords */
-  height: auto;
-  margin: 40px 0;
-  display: block;
 }
 
 /* DIRECTOR */
@@ -122,7 +116,7 @@ section {
   .split img { width: 100%; margin-bottom: 20px; }
   .video iframe { width: 100%; height: 56vw; }
   section { padding: 50px 5vw; }
-  .full-img { width: 100%; } /* touche les bords aussi sur tablette */
+  .full-img { width: 100%; }
 }
 
 @media (max-width: 600px) {
@@ -142,11 +136,13 @@ section {
 
 <!-- PAGE 1 : COVER -->
 <section class="cover">
-  <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Kawas Sancti cover">
+  <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Kawas Sancti cover" class="cover-img">
   <div class="credit">
+    <!-- Desktop -->
     <span class="desktop-only">R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N &nbsp; 2 0 2 5</span>
+    <!-- Mobile -->
     <span class="mobile-only">
-      R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N<br>2 0 2 5
+      R I O<br>V E R D E<br>P R O D U C T I O N<br>2 0 2 5
     </span>
   </div>
 </section>
