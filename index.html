@@ -16,7 +16,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.8;
   font-size: 22px; /* texte globalement plus lisible */
-  transition: background-color 0.8s ease, color 0.8s ease;
+  background-color: #000; /* fond noir fixe */
+  color: #fff; /* texte blanc fixe */
 }
 
 /* TITRES */
@@ -26,6 +27,7 @@ h2 {
   letter-spacing: 0.2em;
   margin-bottom: 40px;
   font-size: 30px;
+  color: #fff;
 }
 
 /* SECTIONS */
@@ -34,28 +36,26 @@ section {
   padding: 60px 6vw;
 }
 
-/* FONDS */
-.dark {
-  background-color: #000;
+/* TEXTE */
+.text {
+  max-width: 900px;
+  margin: auto;
+  overflow-wrap: break-word;
+}
+.text p {
+  margin-bottom: 22px;
+  text-align: justify;
   color: #fff;
 }
-.light {
-  background-color: #fff;
-  color: #111;
-}
-
-/* Texte et liens */
-.light p, .light a { color: #111; }
-.light h2 { color: #000; }
-.dark a { color: #fff; }
 
 /* COVER */
 .cover img {
   width: 100%;
-  max-width: 100%;
+  max-width: 95%; /* image centrée et ne déborde plus */
   height: auto;
   object-fit: contain;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  display: block;
 }
 .cover .credit {
   text-align: center;
@@ -64,7 +64,6 @@ section {
   font-weight: bold;
   font-size: 26px;
   color: #fff;
-  background: rgba(0,0,0,0.3); 
 }
 
 /* VIDEO */
@@ -85,18 +84,10 @@ section {
 /* IMAGES */
 .full-img {
   width: 100%;
+  max-width: 95%; /* pour ne pas toucher les bords */
   height: auto;
-  margin: 40px 0;
-}
-
-/* TEXTES */
-.text {
-  max-width: 900px;
-  margin: auto;
-}
-.text p {
-  margin-bottom: 22px;
-  text-align: justify;
+  margin: 40px auto;
+  display: block;
 }
 
 /* DIRECTOR */
@@ -116,7 +107,7 @@ section {
   font-size: 22px;
 }
 .contact a {
-  color: inherit;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
 }
@@ -129,14 +120,16 @@ section {
     flex-direction: column;
   }
   .split img { width: 100%; margin-bottom: 20px; }
-  .video iframe {
-    width: 100%;
-    height: 56vw;
-  }
+  .video iframe { width: 100%; height: 56vw; }
+  .full-img { max-width: 95%; }
+  section { padding: 50px 5vw; }
 }
+
 @media (max-width: 600px) {
   body { font-size: 18px; }
   h2 { font-size: 22px; }
+  .cover .credit { font-size: 22px; letter-spacing: 0.25em; }
+  section { padding: 40px 4vw; }
 }
 </style>
 </head>
@@ -144,13 +137,13 @@ section {
 <body>
 
 <!-- PAGE 1 : COVER -->
-<section class="cover dark">
+<section class="cover">
   <img src="images/Kawas Sancti eng.pdf-image-000.jpg" alt="Kawas Sancti cover">
   <div class="credit">R I O &nbsp; V E R D E &nbsp; P R O D U C T I O N &nbsp; 2 0 2 5</div>
 </section>
 
 <!-- PAGE 2 : TRAILER -->
-<section class="video dark">
+<section class="video">
   <iframe 
     src="https://www.youtube.com/embed/x09F2qtMAxc" 
     title="Kawas Sancti Trailer" 
@@ -159,7 +152,7 @@ section {
 </section>
 
 <!-- PAGE 3 : SYNOPSIS -->
-<section class="light">
+<section>
   <h2>S Y N O P S I S</h2>
   <img class="full-img" src="images/Kawas Sancti eng.pdf-image-001.jpg" alt="Synopsis image">
   <div class="text">
@@ -172,7 +165,7 @@ section {
 </section>
 
 <!-- PAGE 4 : DIRECTOR STATEMENT -->
-<section class="light">
+<section>
   <h2>D I R E C T O R ’ S &nbsp; S T A T E M E N T</h2>
   <div class="text">
     <p>The film invites audiences to delve into the complex and multi-layered spiritual world of the Indigenous community. By portraying the coexistence of shamanic rituals and Christian ceremonies, it reveals a culture that continuously adapts and evolves amid social and historical transformations.</p>
@@ -183,7 +176,7 @@ section {
 </section>
 
 <!-- PAGE 5 : DIRECTOR + CONTACT -->
-<section class="light">
+<section>
   <h2>D I R E C T O R</h2>
 
   <div class="split">
@@ -202,27 +195,6 @@ section {
     ✉️ <a href="mailto:rioverdeproduction@gmail.com">rioverdeproduction@gmail.com</a>
   </div>
 </section>
-
-<script>
-// Dynamisme : fond noir/blanc au scroll
-const sections = document.querySelectorAll('section');
-window.addEventListener('scroll', () => {
-  const scrollMiddle = window.scrollY + window.innerHeight / 2;
-  sections.forEach(sec => {
-    const top = sec.offsetTop;
-    const bottom = top + sec.offsetHeight;
-    if(scrollMiddle >= top && scrollMiddle <= bottom){
-      if(sec.classList.contains('dark')){
-        document.body.style.backgroundColor = '#000';
-        document.body.style.color = '#fff';
-      } else if(sec.classList.contains('light')){
-        document.body.style.backgroundColor = '#fff';
-        document.body.style.color = '#111';
-      }
-    }
-  });
-});
-</script>
 
 </body>
 </html>
