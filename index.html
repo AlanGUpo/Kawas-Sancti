@@ -52,10 +52,10 @@ section {
   color: #fff;
 }
 
-/* SYNOPSIS : un peu d’espace après l’image */
+/* SYNOPSIS : un peu plus d’espace après l’image */
 .synopsis-text {
   max-width: 900px;
-  margin: 20px auto 0 auto; /* 20px au dessus du texte pour respirer */
+  margin: 30px auto 0 auto; /* 30px au dessus du texte pour respirer */
   text-align: justify;
 }
 
@@ -67,6 +67,12 @@ section {
   object-fit: cover;
   margin: 0 auto;
 }
+
+/* ESPACE ENTRE LES DEUX DERNIÈRES IMAGES */
+.last-page img {
+  margin-bottom: 30px; /* 30px entre avant-dernière et dernière image */
+}
+
 .video iframe {
   width: 100%;
   height: 56.25vw; /* ratio 16:9 */
@@ -185,7 +191,7 @@ section {
 </section>
 
 <!-- PAGE 5 : DIRECTOR + CONTACT -->
-<section>
+<section class="last-page">
   <h2>
     <span class="desktop-only">D I R E C T O R</span>
     <span class="mobile-only">D I R E C T O R</span>
